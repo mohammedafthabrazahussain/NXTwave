@@ -1,0 +1,11 @@
+import { NextResponse } from "next/server";
+import { clearAdminCookie } from "@/lib/auth";
+
+export async function POST() {
+  const res = NextResponse.json({
+    success: true,
+    message: "Admin logged out successfully.",
+  });
+  clearAdminCookie(res);
+  return res;
+}
